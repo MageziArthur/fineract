@@ -44,6 +44,10 @@ public class ExternalServicesReadPlatformServiceImpl implements ExternalServices
                 serviceNameToUse = ExternalServicesConstants.S3_SERVICE_NAME;
             break;
 
+            case "Azure":
+                serviceNameToUse = ExternalServicesConstants.AZURE_SERVICE_NAME;
+            break;
+
             case "SMTP":
                 serviceNameToUse = ExternalServicesConstants.SMTP_SERVICE_NAME;
             break;

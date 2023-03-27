@@ -16,35 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.fineract.infrastructure.documentmanagement.domain;
+package org.apache.fineract.infrastructure.configuration.data;
 
-import java.util.HashMap;
-import java.util.Map;
+public class AzureConfigurationData {
 
-public enum StorageType {
+    private final String accountKey;
+    private final String accountName;
+    private final String endpointSuffix;
+    private final String containerName;
 
-    FILE_SYSTEM(1), S3(2), AZURE(3);
-
-    private final Integer value;
-
-    StorageType(final Integer value) {
-        this.value = value;
+    public AzureConfigurationData(String accountKey, String accountName, String endpointSuffix, String containerName) {
+        this.accountKey = accountKey;
+        this.accountName = accountName;
+        this.endpointSuffix = endpointSuffix;
+        this.containerName = containerName;
     }
 
-    public Integer getValue() {
-        return this.value;
+    public String getAccountKey() {
+        return accountKey;
     }
 
-    private static final Map<Integer, StorageType> intToEnumMap = new HashMap<>();
-
-    static {
-        for (final StorageType type : StorageType.values()) {
-            intToEnumMap.put(type.value, type);
-        }
+    public String getAccountName() {
+        return accountName;
     }
 
-    public static StorageType fromInt(final int i) {
-        final StorageType type = intToEnumMap.get(Integer.valueOf(i));
-        return type;
+    public String getEndpointSuffix() {
+        return endpointSuffix;
+    }
+
+    public String getContainerName() {
+        return containerName;
     }
 }

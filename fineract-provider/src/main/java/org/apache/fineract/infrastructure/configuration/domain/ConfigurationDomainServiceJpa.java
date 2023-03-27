@@ -78,6 +78,11 @@ public class ConfigurationDomainServiceJpa implements ConfigurationDomainService
     }
 
     @Override
+    public boolean isAzureStorageBlob() {
+        return getGlobalConfigurationPropertyData("azure-storage-blob").isEnabled();
+    }
+
+    @Override
     public boolean isRescheduleFutureRepaymentsEnabled() {
         final String rescheduleRepaymentsConfigurationProperty = "reschedule-future-repayments";
         final GlobalConfigurationPropertyData property = getGlobalConfigurationPropertyData(rescheduleRepaymentsConfigurationProperty);

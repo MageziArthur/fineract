@@ -88,6 +88,7 @@ dependencies {
             'org.mapstruct:mapstruct',
 
             'io.github.resilience4j:resilience4j-spring-boot2',
+            'com.azure:azure-storage-blob'
             )
 
     implementation ('org.apache.commons:commons-email') {

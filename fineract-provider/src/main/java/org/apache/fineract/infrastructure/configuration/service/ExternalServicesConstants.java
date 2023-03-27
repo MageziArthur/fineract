@@ -32,6 +32,12 @@ public final class ExternalServicesConstants {
     public static final String S3_ACCESS_KEY = "s3_access_key";
     public static final String S3_SECRET_KEY = "s3_secret_key";
 
+    public static final String AZURE_SERVICE_NAME = "Azure";
+    public static final String AZURE_ACCOUNT_KEY = "accountKey";
+    public static final String AZURE_ACCOUNT_NAME = "accountName";
+    public static final String AZURE_ENDPOINT_SUFFIX = "endpointSuffix";
+    public static final String AZURE_CONTAINER_NAME = "containerName";
+
     public static final String SMTP_SERVICE_NAME = "SMTP_Email_Account";
     public static final String SMTP_USERNAME = "username";
     public static final String SMTP_PASSWORD = "password";
@@ -163,6 +169,39 @@ public final class ExternalServicesConstants {
 
         static {
             for (final S3JSONinputParams type : S3JSONinputParams.values()) {
+                values.add(type.value);
+            }
+        }
+
+        public static Set<String> getAllValues() {
+            return values;
+        }
+
+        @Override
+        public String toString() {
+            return name().toString().replaceAll("_", " ");
+        }
+
+        public String getValue() {
+            return this.value;
+        }
+    }
+
+    public enum AzureJSONinputParams {
+
+        AZURE_ACCOUNT_KEY("accountKey"), AZURE_ACCOUNT_NAME("accountName"), AZURE_ENDPOINT_SUFFIX("endpointSuffix"), AZURE_CONTAINER_NAME(
+                "containerName");
+
+        private final String value;
+
+        AzureJSONinputParams(final String value) {
+            this.value = value;
+        }
+
+        private static final Set<String> values = new HashSet<>();
+
+        static {
+            for (final AzureJSONinputParams type : AzureJSONinputParams.values()) {
                 values.add(type.value);
             }
         }

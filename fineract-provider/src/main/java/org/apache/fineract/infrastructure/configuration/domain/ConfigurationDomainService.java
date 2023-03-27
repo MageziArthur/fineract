@@ -27,6 +27,8 @@ public interface ConfigurationDomainService {
 
     boolean isAmazonS3Enabled();
 
+    boolean isAzureStorageBlob();
+
     boolean isRescheduleFutureRepaymentsEnabled();
 
     boolean isRescheduleRepaymentsOnHolidaysEnabled();
