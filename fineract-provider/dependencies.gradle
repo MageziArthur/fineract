@@ -78,7 +78,8 @@ dependencies {
 
             'com.google.cloud.sql:mysql-socket-factory-connector-j-8:1.2.3',
             'com.squareup.retrofit2:converter-gson',
-            'com.sun.activation:jakarta.activation:1.2.2'
+            'com.sun.activation:jakarta.activation:1.2.2',
+            'mysql:mysql-connector-java'
             )
     implementation ('jakarta.xml.bind:jakarta.xml.bind-api') {
         exclude group: 'jakarta.activation'

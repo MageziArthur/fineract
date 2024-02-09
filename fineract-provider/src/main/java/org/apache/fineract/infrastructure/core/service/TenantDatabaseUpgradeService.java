@@ -78,7 +78,7 @@ public class TenantDatabaseUpgradeService {
 
                 // Should be removed later when all instances are stabilized
                 // :FINERACT-1008
-                repairFlywayVersionSkip(flyway.getConfiguration().getDataSource());
+                // repairFlywayVersionSkip(flyway.getConfiguration().getDataSource());
 
                 try {
                     flyway.repair();
@@ -113,7 +113,7 @@ public class TenantDatabaseUpgradeService {
 
         // Should be removed later when all instances are stabilized
         // :FINERACT-1008
-        repairFlywayVersionSkip(flyway.getConfiguration().getDataSource());
+        // repairFlywayVersionSkip(flyway.getConfiguration().getDataSource());
 
         flyway.repair();
         flyway.migrate();
@@ -127,6 +127,7 @@ public class TenantDatabaseUpgradeService {
         return value;
     }
 
+    @SuppressWarnings("unused")
     private void repairFlywayVersionSkip(DataSource source) {
         JdbcTemplate template = new JdbcTemplate(source);
         LOG.info("repairFlywayVersionSkip: Check whether the version table is in old format ");
